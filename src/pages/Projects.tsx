@@ -2,10 +2,17 @@ import { motion } from "framer-motion";
 import PageTransition from "../components/PageTransition";
 import { Github, ExternalLink, Calendar } from "lucide-react";
 import { useTheme } from "../components/ThemeProvider";
+import { useState } from "react"; // ✅ ADDED
 
 const projects = [
   {
     title: "Power Vocab App",
+    images: [
+      "/projects/PowerVocab1.png",
+      "/projects/PowerVocab2.png",
+      "/projects/PowerVocab3.png",
+      "/projects/PowerVocab4.png"
+    ],
     description: "A full-stack vocabulary learning web app with Google OAuth, real-time Firestore sync, and AI-powered sentence generation via OpenAI API. Features animated card-based learning, per-word progress tracking, streaks, and an adaptive MCQ quiz module.",
     tech: ["React", "TypeScript", "Firebase", "OpenAI API", "Tailwind CSS", "Framer Motion"],
     highlights: [
@@ -21,10 +28,16 @@ const projects = [
   },
   {
     title: "AI Data Analyst Copilot",
+    images: [
+      "/projects/AI1.png",
+      "/projects/AI2.png",
+      "/projects/AI3.png",
+      "/projects/AI4.png"
+    ],
     description: "An AI-powered data analysis tool where users query CSV datasets in plain English. The LLM converts input to executable Pandas code and auto-generates Matplotlib visualizations, with a RAG pipeline grounding prompts with live dataset context.",
     tech: ["Python", "FastAPI", "LangChain", "FAISS", "RAG", "Streamlit", "OpenRouter API"],
     highlights: [
-      "Built a code sanitization and validation pipeline \u2014 reducing runtime errors by ~65%.",
+      "Built a code sanitization and validation pipeline — reducing runtime errors by ~65%.",
       "Engineered a RAG pipeline using FAISS vector search over dataset schema, cutting hallucinated column references by ~60%.",
       "Deployed on Streamlit Cloud with multi-turn analyst sessions.",
     ],
@@ -36,6 +49,12 @@ const projects = [
   },
   {
     title: "Meca",
+    images: [
+      "/projects/Meca1.png",
+      "/projects/Meca2.png",
+      "/projects/Meca3.png",
+      "/projects/Meca4.png"
+    ],
     description: "A centralized meeting management system to organize and persist virtual meeting links, reducing scheduling overhead for teams. Features automated meeting reminder logic and a responsive UI with structured backend data processing.",
     tech: ["Java", "HTML", "CSS", "JavaScript", "TypeScript"],
     highlights: [
@@ -55,6 +74,8 @@ export default function Projects() {
   const { theme } = useTheme();
   const isDark = theme === "dark";
 
+  const [selectedImage, setSelectedImage] = useState<string | null>(null); // ✅ ADDED
+
   return (
     <PageTransition>
       <div className="w-full max-w-5xl mx-auto px-6 py-32">
@@ -68,7 +89,7 @@ export default function Projects() {
             My <span className="text-gradient">Projects</span>
           </h1>
           <p className={`text-base max-w-2xl ${isDark ? "text-white/40" : "text-gray-500"}`}>
-            Personal projects built and deployed \u2014 each one solving a real problem with a real tech stack.
+            Real-world solutions crafted with code, data, and intelligent systems.
           </p>
         </motion.div>
 
@@ -85,6 +106,22 @@ export default function Projects() {
             >
               <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
               <div className="relative z-10">
+
+                {project.images && (
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+                    {project.images.map((img, idx) => (
+                      <div key={idx} className="rounded-xl bg-black/5 p-2 flex items-center justify-center">
+                        <img
+                          src={img}
+                          alt={`preview-${idx}`}
+                          onClick={() => setSelectedImage(img)} // ✅ ADDED
+                          className="w-full h-auto object-contain transition-transform duration-500 hover:scale-105 cursor-pointer"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                )}
+
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-5">
                   <div>
                     <h2 className={`text-xl font-bold group-hover:text-gradient transition-all ${isDark ? "text-white" : "text-gray-900"}`}>{project.title}</h2>
@@ -127,6 +164,19 @@ export default function Projects() {
             </motion.div>
           ))}
         </div>
+
+        {/* ✅ MODAL ADDED */}
+        {selectedImage && (
+          <div
+            className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
+            onClick={() => setSelectedImage(null)}
+          >
+            <img
+              src={selectedImage}
+              className="max-w-full max-h-full rounded-xl shadow-2xl"
+            />
+          </div>
+        )}
 
         <motion.div
           initial={{ opacity: 0 }}
