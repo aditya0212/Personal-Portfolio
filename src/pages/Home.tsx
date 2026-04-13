@@ -136,7 +136,7 @@ export default function Home() {
               transition={{ delay: 0.6, duration: 0.6 }}
               className="flex flex-col items-center gap-5"
             >
-              <a href={`${BASE}resume.pdf`} download="Aditya_Singh_Resume.pdf" target="_blank" rel="noopener noreferrer">
+              <a href={`${BASE}Aditya_Singh_Resume.pdf`} download="Aditya_Singh_Resume.pdf" target="_blank" rel="noopener noreferrer">
                 <motion.span
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.97 }}
