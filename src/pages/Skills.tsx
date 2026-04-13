@@ -95,33 +95,50 @@ const certIcons = [
 const certifications = [
   {
     name: "Deep Learning Specialization",
+    subtitle: "(Professional Certificate)",
     issuer: "DeepLearning.AI",
     link: "https://coursera.org/share/b628d6bbd8d9faf0c1ae9663456769d4",
+    logo: "/logos/deeplearningai.png",
+  },
+  {
+    name: "Azure AI Essentials",
+    subtitle: "(Professional Certificate)",
+    issuer: "Microsoft",
+    link: "https://www.linkedin.com/learning/certificates/fbd05625ab522d0030dcd81106d4a396cea98b321abca96a92571c52f6484581",
+    logo: "/logos/microsoft.svg",
+  },
+  {
+    name: "Introduction to Computer Vision",
+    subtitle: "(Professional Certificate)",
+    issuer: "IBM",
+    link: "https://coursera.org/share/13802d5b72c715a2797f2826bcd0d3b5",
+    logo: "/logos/ibm.svg",
   },
   {
     name: "Mastering System Design",
     issuer: "Udemy",
     link: "https://www.udemy.com/certificate/UC-e70436a8-5e95-4f50-8009-91190388f8d3/",
+    logo: "/logos/udemy.svg",
   },
   {
     name: "Data Structures and Algorithms",
+    subtitle: "(Professional Certificate)",
     issuer: "Udemy",
     link: "https://www.udemy.com/certificate/UC-8edea096-a905-4fcd-9dcc-e10f43a0d89d/",
-  },
-  {
-    name: "Introduction to Computer Vision",
-    issuer: "IBM",
-    link: "https://coursera.org/share/13802d5b72c715a2797f2826bcd0d3b5",
+    logo: "/logos/udemy.svg",
   },
   {
     name: "Prepare Data for Exploration",
+    subtitle: "(Professional Certificate)",
     issuer: "Google",
     link: "https://coursera.org/share/36ed46e984b05f948cec6d2d3018a058",
+    logo: "/logos/google.svg",
   },
   {
     name: "Kubernetes in AWS",
     issuer: "Coursera",
     link: "https://coursera.org/share/5e413a1a73f10f9d26aa542e5af4388d",
+    logo: "/logos/coursera.svg",
   },
 ];
 
@@ -210,12 +227,44 @@ export default function Skills() {
                 whileHover={{ y: -4, scale: 1.02 }}
                 className="card-elevated card-glow rounded-xl p-6 transition-all duration-300 group cursor-pointer block"
               >
-                <div className="mb-4">
-                  {certIcons[i]}
+                {/* Top Row */}
+                <div className="flex justify-between items-start mb-4">
+                  <div>
+                    {certIcons[i % certIcons.length]}
+                  </div>
+
+                  <ExternalLink
+                    size={14}
+                    className="text-white/20 group-hover:text-purple-400 transition-colors"
+                  />
                 </div>
-                <h4 className={`font-semibold text-sm mb-1 leading-tight group-hover:text-gradient transition-all ${isDark ? "text-white" : "text-gray-900"}`}>{cert.name}</h4>
-                <p className={`text-xs ${isDark ? "text-white/35" : "text-gray-500"}`}>{cert.issuer}</p>
-                <ExternalLink size={12} className="mt-3 text-white/20 group-hover:text-purple-400 transition-colors" />
+
+                {/* Title */}
+                <h4 className={`font-semibold text-sm mb-1 leading-tight group-hover:text-gradient transition-all ${isDark ? "text-white" : "text-gray-900"}`}>
+                  {cert.name}
+                </h4>
+
+                {/* Subtitle */}
+                {cert.subtitle && (
+                  <p className="text-xs text-purple-400 mb-1">
+                    {cert.subtitle}
+                  </p>
+                )}
+
+                {/* Bottom Row */}
+                <div className="flex items-end justify-between mt-3">
+                  <p className={`text-xs ${isDark ? "text-white/35" : "text-gray-500"}`}>
+                    {cert.issuer}
+                  </p>
+
+                  {cert.logo && (
+                    <img
+                      src={cert.logo}
+                      alt={cert.issuer}
+                      className="h-6 w-6 object-contain opacity-80 group-hover:opacity-100 transition"
+                    />
+                  )}
+                </div>
               </motion.a>
             ))}
           </div>
