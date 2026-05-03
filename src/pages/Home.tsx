@@ -198,7 +198,7 @@ export default function Home() {
               Building <span className="text-gradient">Production Systems</span> that Scale
             </h2>
             <p className={`text-base max-w-2xl mx-auto leading-relaxed ${isDark ? "text-white/40" : "text-gray-500"}`}>
-              Backend Engineer at TCS with 1.5+ years owning Python/FastAPI microservices.
+              Backend Engineer at TCS with 2 years owning Python/FastAPI microservices.
               <br />
               CS graduate with an AI major from Bennett University. Hands-on with LLM integration, RAG pipelines, and CI/CD automation.
             </p>

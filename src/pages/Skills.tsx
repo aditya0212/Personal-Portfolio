@@ -261,7 +261,7 @@ export default function Skills() {
                     <img
                       src={cert.logo}
                       alt={cert.issuer}
-                      className="h-6 w-6 object-contain opacity-80 group-hover:opacity-100 transition"
+                      className="h-6 w-6 object-contain opacity-70 group-hover:opacity-100 group-hover:scale-110 transition duration-300"
                     />
                   )}
                 </div>
