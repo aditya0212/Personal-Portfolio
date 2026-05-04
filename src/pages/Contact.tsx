@@ -104,7 +104,7 @@ export default function Contact() {
             isDark ? "text-white" : "text-gray-900"
           }`}
         >
-          Get in Touch
+          Get in <span className="text-gradient">Touch</span>
         </h1>
         <p
           className={`text-base max-w-2xl ${

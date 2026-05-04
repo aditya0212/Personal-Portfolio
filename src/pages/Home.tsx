@@ -125,7 +125,7 @@ export default function Home() {
               transition={{ delay: 0.4, duration: 0.8 }}
               className={`text-sm md:text-base max-w-xl mx-auto mb-8 mt-6 leading-relaxed ${isDark ? "text-white/40" : "text-gray-500"}`}
             >
-              Building production microservices at TCS with Python & FastAPI.
+              Building production microservices from last 2 years with Python & FastAPI.
               <br />
               CS graduate with an AI major — passionate about scalable systems and intelligent software.
             </motion.p>

@@ -11,9 +11,9 @@ const skillGroups = [
     borderColor: "border-purple-500/20",
     skills: [
       { name: "Python", level: 95 },
-      { name: "SQL", level: 90 },
+      { name: "JavaScript", level: 90 },
       { name: "TypeScript", level: 80 },
-      { name: "JavaScript", level: 80 },
+      { name: "SQL", level: 80 },
     ],
   },
   {
@@ -36,9 +36,11 @@ const skillGroups = [
     titleColor: "text-pink-400",
     borderColor: "border-pink-500/20",
     skills: [
+      { name: "Supabase", level: 90 },
       { name: "PostgreSQL", level: 90 },
-      { name: "MySQL", level: 85 },
-      { name: "Firebase Firestore", level: 80 },
+      { name: "SSMS", level: 85 },
+      { name: "Firebase Firestore", level: 85 },
+      { name: "MySQL", level: 80 },
       { name: "Redis", level: 75 },
     ],
   },
@@ -65,6 +67,9 @@ const skillGroups = [
       { name: "GitHub Actions", level: 85 },
       { name: "Firebase Hosting", level: 80 },
       { name: "Streamlit Cloud", level: 80 },
+      { name: "Vercel", level: 80 },
+      { name: "Render", level: 75 },
+      { name: "Brevo", level: 75 },
     ],
   },
   {
@@ -98,7 +103,7 @@ const certifications = [
     subtitle: "(Professional Certificate)",
     issuer: "DeepLearning.AI",
     link: "https://coursera.org/share/b628d6bbd8d9faf0c1ae9663456769d4",
-    logo: "/logos/deeplearningai.png",
+    logo: "/logos/deeplearningai.svg",
   },
   {
     name: "Azure AI Essentials",
@@ -116,6 +121,7 @@ const certifications = [
   },
   {
     name: "Mastering System Design",
+    subtitle: "(Professional Certificate)",
     issuer: "Udemy",
     link: "https://www.udemy.com/certificate/UC-e70436a8-5e95-4f50-8009-91190388f8d3/",
     logo: "/logos/udemy.svg",
@@ -136,6 +142,7 @@ const certifications = [
   },
   {
     name: "Kubernetes in AWS",
+    subtitle: "(Professional Certificate)",
     issuer: "Coursera",
     link: "https://coursera.org/share/5e413a1a73f10f9d26aa542e5af4388d",
     logo: "/logos/coursera.svg",

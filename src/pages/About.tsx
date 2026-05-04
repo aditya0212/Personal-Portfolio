@@ -134,7 +134,7 @@ export default function About() {
               </p>
               <div className={`space-y-4 text-sm leading-relaxed ${isDark ? "text-white/45" : "text-gray-600"}`}>
                 <p>
-                  Backend Engineer with 2 years owning Python/FastAPI microservices in production. CS graduate with an AI major from Bennett University, targeting Backend, Data Engineering, and Applied AI roles.
+                  Backend Engineer with 2 years owning Python/FastAPI microservices in production. CS graduate with an AI major from Bennett University, targeting Backend, Full Stack, or AI/ML Engineering roles.
                 </p>
                 <p>
                   I care about writing clean, testable code, owning my work end-to-end, and shipping things that actually work in production. Systems design, performance optimisation, and developer experience are things I think about constantly.
